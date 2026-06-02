@@ -9,3 +9,313 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* AuraPad Theme Definitions */
+:root {
+    --bg-app: #f1f5f9;
+    --bg-sidebar: #ffffff;
+    --bg-card: #ffffff;
+    --bg-editor: #ffffff;
+    
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-active: #4f46e5;
+    
+    --border-color: #e2e8f0;
+    --border-focus: #818cf8;
+    --accent-color: #4f46e5;
+    --accent-hover: #4338ca;
+    
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+
+    /* Note Color Palettes (Adapts per theme) */
+    --note-bg-default: var(--bg-card);
+    --note-bg-blue: #eff6ff;
+    --note-bg-emerald: #ecfdf5;
+    --note-bg-amber: #fffbeb;
+    --note-bg-purple: #faf5ff;
+    --note-bg-rose: #fff1f2;
+
+    --note-border-default: var(--border-color);
+    --note-border-blue: #bfdbfe;
+    --note-border-emerald: #a7f3d0;
+    --note-border-amber: #fde68a;
+    --note-border-purple: #e9d5ff;
+    --note-border-rose: #fecdd3;
+}
+
+[data-theme="dark"] {
+    --bg-app: #090d16;
+    --bg-sidebar: #0f172a;
+    --bg-card: #1e293b;
+    --bg-editor: #0f172a;
+    
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-active: #818cf8;
+    
+    --border-color: #334155;
+    --border-focus: #6366f1;
+    --accent-color: #6366f1;
+    --accent-hover: #4f46e5;
+    
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(51, 65, 85, 0.8);
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+
+    /* Note Color Palettes */
+    --note-bg-default: var(--bg-card);
+    --note-bg-blue: #1e3a8a;
+    --note-bg-emerald: #064e3b;
+    --note-bg-amber: #78350f;
+    --note-bg-purple: #581c87;
+    --note-bg-rose: #881337;
+
+    --note-border-default: var(--border-color);
+    --note-border-blue: #2563eb;
+    --note-border-emerald: #059669;
+    --note-border-amber: #d97706;
+    --note-border-purple: #9333ea;
+    --note-border-rose: #e11d48;
+}
+
+[data-theme="sepia"] {
+    --bg-app: #f4ecd8;
+    --bg-sidebar: #fcf6e4;
+    --bg-card: #fffdf5;
+    --bg-editor: #fcf6e4;
+    
+    --text-main: #433422;
+    --text-muted: #8c765c;
+    --text-active: #c05621;
+    
+    --border-color: #e4d3b8;
+    --border-focus: #c05621;
+    --accent-color: #c05621;
+    --accent-hover: #dd6b20;
+    
+    --glass-bg: rgba(252, 246, 228, 0.7);
+    --glass-border: rgba(228, 211, 184, 0.8);
+    --shadow-premium: 0 10px 30px -10px rgba(67, 52, 34, 0.08);
+
+    /* Note Color Palettes */
+    --note-bg-default: var(--bg-card);
+    --note-bg-blue: #e8f4fd;
+    --note-bg-emerald: #e8f7ee;
+    --note-bg-amber: #fdf3df;
+    --note-bg-purple: #f3ebfc;
+    --note-bg-rose: #fcebeb;
+
+    --note-border-default: var(--border-color);
+    --note-border-blue: #bcdff9;
+    --note-border-emerald: #bde7cd;
+    --note-border-amber: #f5dca7;
+    --note-border-purple: #ebd5f7;
+    --note-border-rose: #f7d5d5;
+}
+
+[data-theme="cyberpunk"] {
+    --bg-app: #050508;
+    --bg-sidebar: rgba(10, 10, 15, 0.95);
+    --bg-card: rgba(20, 20, 30, 0.8);
+    --bg-editor: rgba(10, 10, 15, 0.9);
+    
+    --text-main: #00ffcc;
+    --text-muted: #8a2be2;
+    --text-active: #ff007f;
+    
+    --border-color: rgba(0, 255, 204, 0.3);
+    --border-focus: #ff007f;
+    --accent-color: #ff007f;
+    --accent-hover: #00ffcc;
+    
+    --glass-bg: rgba(10, 10, 15, 0.8);
+    --glass-border: rgba(0, 255, 204, 0.4);
+    --shadow-premium: 0 0 15px rgba(0, 255, 204, 0.2), 0 0 5px rgba(255, 0, 127, 0.1);
+
+    /* Note Color Palettes */
+    --note-bg-default: var(--bg-card);
+    --note-bg-blue: rgba(0, 30, 60, 0.7);
+    --note-bg-emerald: rgba(0, 50, 30, 0.7);
+    --note-bg-amber: rgba(50, 40, 0, 0.7);
+    --note-bg-purple: rgba(40, 0, 60, 0.7);
+    --note-bg-rose: rgba(60, 0, 30, 0.7);
+
+    --note-border-default: var(--border-color);
+    --note-border-blue: #00c8ff;
+    --note-border-emerald: #00ff66;
+    --note-border-amber: #ffd700;
+    --note-border-purple: #c71585;
+    --note-border-rose: #ff007f;
+}
+
+/* Global Transitions & Reset */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-premium);
+}
+
+/* Color Palette Utility Classes */
+.note-color-default { background-color: var(--note-bg-default); border-color: var(--note-border-default); }
+.note-color-blue { background-color: var(--note-bg-blue); border-color: var(--note-border-blue); }
+.note-color-emerald { background-color: var(--note-bg-emerald); border-color: var(--note-border-emerald); }
+.note-color-amber { background-color: var(--note-bg-amber); border-color: var(--note-border-amber); }
+.note-color-purple { background-color: var(--note-bg-purple); border-color: var(--note-border-purple); }
+.note-color-rose { background-color: var(--note-bg-rose); border-color: var(--note-border-rose); }
+
+/* Markdown Preview Typography Styles */
+.markdown-body {
+    font-family: inherit;
+    line-height: 1.6;
+}
+.markdown-body h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+.markdown-body h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.2rem;
+}
+.markdown-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.markdown-body p {
+    margin-bottom: 1rem;
+}
+.markdown-body ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+.markdown-body ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+.markdown-body li {
+    margin-bottom: 0.25rem;
+}
+.markdown-body li > input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: middle;
+    accent-color: var(--accent-color);
+}
+.markdown-body blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-style: italic;
+}
+.markdown-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.85em;
+    background-color: var(--border-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+.markdown-body pre {
+    background-color: var(--bg-app);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-color);
+}
+.markdown-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9em;
+}
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.2rem;
+}
+.markdown-body th, .markdown-body td {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.75rem;
+}
+.markdown-body th {
+    background-color: var(--bg-app);
+    font-weight: 600;
+}
+.markdown-body hr {
+    height: 1px;
+    border: none;
+    background-color: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+.pulse-glow {
+    animation: pulseGlow 1.5s infinite;
+}
+
+/* Custom transitions and states */
+.note-list-card {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+}
+.note-list-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.note-list-card.active-note {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+}
