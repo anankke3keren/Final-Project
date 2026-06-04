@@ -97,6 +97,36 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('landing');
+    }
+
+    /**
+     * Handle profile picture upload.
+     */
+    public function updateProfilePicture(Request $request)
+    {
+        $request->validate([
+            'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = Auth::user();
+
+        if ($request->hasFile('profile_picture')) {
+            // Delete old picture if exists
+            if ($user->profile_picture && \Illuminate\Support\Facades\Storage::disk('public')->exists($user->profile_picture)) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($user->profile_picture);
+            }
+
+            // Store new picture
+            $path = $request->file('profile_picture')->store('avatars', 'public');
+
+            // Update user record
+            $user->profile_picture = $path;
+            $user->save();
+
+            return redirect()->back()->with('toast_success', 'Foto profil berhasil diperbarui!');
+        }
+
+        return redirect()->back()->with('toast_error', 'Gagal mengunggah foto profil.');
     }
 }

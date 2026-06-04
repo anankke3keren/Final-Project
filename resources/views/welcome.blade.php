@@ -169,11 +169,28 @@
 
                 <!-- User Info & Logout -->
                 <div class="flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs shrink-0">
-                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                    <div class="flex items-center gap-2.5 min-w-0 flex-1">
+                        <!-- Profile Picture Upload Form -->
+                        <form id="profile-picture-form" action="{{ route('profile.picture.update') }}" method="POST" enctype="multipart/form-data" class="hidden">
+                            @csrf
+                            <input type="file" name="profile_picture" id="profile-picture-input" accept="image/jpeg,image/png,image/gif" onchange="document.getElementById('profile-picture-form').submit();">
+                        </form>
+                        
+                        <!-- Clickable Avatar -->
+                        <div class="relative group shrink-0 cursor-pointer" onclick="document.getElementById('profile-picture-input').click();" title="Ubah Foto Profil">
+                            @if(auth()->user()->profile_picture)
+                                <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}" alt="Profile" class="w-8 h-8 rounded-full object-cover border border-[var(--border-color)]">
+                            @else
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs">
+                                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                                </div>
+                            @endif
+                            <div class="absolute inset-0 rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            </div>
                         </div>
-                        <div class="min-w-0">
+                        
+                        <div class="min-w-0 flex-1">
                             <p class="text-xs font-semibold text-[var(--text-main)] truncate">{{ auth()->user()->name }}</p>
                             <p class="text-[10px] text-[var(--text-muted)] truncate">{{ auth()->user()->email }}</p>
                         </div>
